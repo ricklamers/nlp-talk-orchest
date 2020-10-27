@@ -1,0 +1,67 @@
+{
+  "name": "NLP",
+  "uuid": "5a99676d-7bdf-4ce5-b0e9-72a36134b759",
+  "steps": {
+    "3589e440-db35-4c01-970f-c82ae36d891f": {
+      "title": "DATA: getting wikitext",
+      "uuid": "3589e440-db35-4c01-970f-c82ae36d891f",
+      "incoming_connections": [],
+      "file_path": "wiki-download.sh",
+      "kernel": {
+        "name": "python",
+        "display_name": "Python 3"
+      },
+      "image": "orchestsoftware/custom-base-kernel-py:fastai",
+      "parameters": {},
+      "meta_data": {
+        "position": [
+          144,
+          342
+        ],
+        "hidden": false
+      }
+    },
+    "b17b18ed-786f-4fe8-b91a-08dc227fa814": {
+      "title": "Language model",
+      "uuid": "b17b18ed-786f-4fe8-b91a-08dc227fa814",
+      "incoming_connections": [
+        "3589e440-db35-4c01-970f-c82ae36d891f"
+      ],
+      "file_path": "language-model.ipynb",
+      "kernel": {
+        "name": "python",
+        "display_name": "Python 3"
+      },
+      "image": "orchestsoftware/custom-base-kernel-py:fastai",
+      "parameters": {},
+      "meta_data": {
+        "position": [
+          478,
+          328
+        ],
+        "hidden": false
+      }
+    },
+    "94d8d1ab-ec53-4b17-9714-d6d066af6b08": {
+      "title": "Fine tuning",
+      "uuid": "94d8d1ab-ec53-4b17-9714-d6d066af6b08",
+      "incoming_connections": [
+        "b17b18ed-786f-4fe8-b91a-08dc227fa814"
+      ],
+      "file_path": "tune.ipynb",
+      "kernel": {
+        "name": "python",
+        "display_name": "Python 3"
+      },
+      "image": "orchestsoftware/custom-base-kernel-py:fastai",
+      "parameters": {},
+      "meta_data": {
+        "position": [
+          889,
+          368
+        ],
+        "hidden": false
+      }
+    }
+  }
+}
